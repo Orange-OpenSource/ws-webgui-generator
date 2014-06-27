@@ -46,6 +46,7 @@ if(!empty($_SESSION['service'])){
     $listFunctionalities = $generatorUi->getSoapMethodAvailable();
     asort($listFunctionalities);
 }
+$board = sfYaml::load((__DIR__) .'/conf/board.yml');
 function makeList($wanted, $listFunctionalities, $selected="false"){
 	if(!is_array($listFunctionalities)){
 		$listFunctionalities = array($listFunctionalities);
@@ -194,17 +195,16 @@ function makeList($wanted, $listFunctionalities, $selected="false"){
 		    </div>
 		    <div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="minSize:20, region:'leading', splitter:true" style="width: 300px;" id="leftAccordion">
 		        <?php
-		        	makeList('user', $listFunctionalities, "true");
-		        	makeList('tenant', $listFunctionalities);
-		        	makeList('server', $listFunctionalities);
-		        	makeList('database group', $listFunctionalities);
-		        	makeList('operating system', $listFunctionalities);
-		        	makeList('infrastructure', $listFunctionalities);
-		        	makeList(array("Engine", "Service Class"), $listFunctionalities);
-		        	makeList(array("filer","storage"), $listFunctionalities);
-		        	makeList('ssh key', $listFunctionalities);
-		        	makeList('datacenter', $listFunctionalities);
-		        	makeList('protocol', $listFunctionalities);
+		        	$i=0;
+		        	foreach ($board['menu'] as $value) {
+		        		if($i==0){
+		        			$selected = "true";
+		        		}else{
+		        			$selected = "false";
+		        		}
+		        		makeList($value, $listFunctionalities, $selected);
+		        		$i++;
+		        	}
 		        ?>
 		        <div data-dojo-type="dijit/layout/AccordionPane" title="Database Information" selected="<?php echo $selected; ?>">
 					<ul class="panel">

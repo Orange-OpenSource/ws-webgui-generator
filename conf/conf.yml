@@ -1,8 +1,8 @@
 config:
-  title: 'Cloud DBaaS Admin GUI' #se the title of your gui
-  logo: img/logo.jpg #logo of your gui, path relative to index.php
-  favicon: img/favicon.ico #favicon of your gui, path relative to index.php
-  notLoggedErrorText: 'invalid username' #error text send by your soap when wrong credential
-  loginNeeded: true #set false if your webservice doesn't require login information
+  title: 'Cloud DBaaS Admin GUI'
+  logo: img/logo.jpg
+  favicon: img/favicon.ico
+  notLoggedErrorText: 'invalid username'
+  loginNeeded: true
 services:
   DbaasAdminApiRemoteService: { uri: 'http://10.203.6.26:9000/cloud-orange-dbaas-ws-war/dbaasAdminApi18?wsdl', login: null }

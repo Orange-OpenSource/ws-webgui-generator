@@ -1,0 +1,16 @@
+menu:
+  - user
+  - tenant
+  - server
+  - database group
+  - operating system
+  - infrastructure
+  - 
+    - Engine
+    - Service Class
+  - 
+    - filer
+    - storage
+  - ssh key
+  - datacenter
+  - protocol
