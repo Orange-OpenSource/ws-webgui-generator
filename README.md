@@ -1,7 +1,7 @@
 ws-webgui-generator
 ===================
-
 Generate a webgui from a webservice soap to have a interface easily and rapidly.
+![dashboard](https://raw.githubusercontent.com/Orange-OpenSource/ws-webgui-generator/master/img/dashboard.png)
 
 Why this project?
 ------------------
