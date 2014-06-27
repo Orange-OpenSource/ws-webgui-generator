@@ -22,4 +22,15 @@ Go inside project and conf/board.yml you will find a menu by default. Simply rem
 
 How to feed your fields directly?
 -----------------------
-
+When you've installed this project you will have a new folder called apiRemote, inside you will found two files:
+- a .php file with your webservice's name
+- a .yml file with your webservice's name
+Take a look to yml file will find something like this:
+```yml
+dataCenter:
+  type_form: input
+  connector: ''
+```
+dataCenter here correspond to a field name from your webservice it can be other field
+You can change type_form value by "select", "input" or "textarea" it will change your field form inside your app for this method.
+you can change also connector value by text, array or even a soap method from your webservice (for this last one prefer use a select type_form) and your fields will be feed by this value(s).
